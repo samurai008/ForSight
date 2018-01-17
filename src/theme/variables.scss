@@ -38,22 +38,35 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  app: (
+    base: #37474F,
+    contrast: #ffffff
+  )
 );
 
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
+// $menu-ios-background: color($colors, app, base);
 
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
+$background-color: color($colors, app, base);
+$text-color: color($colors, app, contrast);
+$toolbar-background: color($colors, app, base);
 
+.header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+  background-image: none !important;
+}
 
+$toolbar-ios-border-color: color($colors, app, base);
+
+$toolbar-ios-title-text-align: left;
 
 
 // App Windows Variables
