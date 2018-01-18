@@ -1,11 +1,31 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+  <navbar [title]="'Home'"></navbar>
 </ion-header>
 
 <ion-content padding>
+    <ion-card>
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="./assets/imgs/profile-img.jpg">
+        </ion-avatar>
+        <h2>John Doe</h2>
+        <p>
+          <ion-icon name="md-star"></ion-icon> 4
+        </p>
+      </ion-item>
+
+      <ion-card-content>
+        <p>Something about our John Doe here!</p>
+      </ion-card-content>
+    
+      <ion-row>
+        <ion-col>
+          <button ion-button color="dark" icon-right>Events 
+            <ion-icon name="md-arrow-round-forward"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+  
+    </ion-card>
 </ion-content>

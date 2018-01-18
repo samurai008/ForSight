@@ -1,3 +1,26 @@
 page-register {
+    .item-input-has-focus, .input-has-focus {
+        color: color($colors, app, contrast);
+    }
 
+    .mini-input {
+        padding: 1rem;
+        border: 1px solid color($colors, app, contrast);
+        background: transparent;
+        width: 100px;
+        text-align: center;
+    }
+
+    .file-input-wrapper {
+        position: relative;
+        input[type="file"] {
+            opacity: 0;
+            width: 150px;
+        }
+        .file {
+            position: absolute;
+            left: 0px;
+            z-index: -1;
+        }
+    }
 }

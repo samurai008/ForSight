@@ -1,0 +1,15 @@
+page-profile {
+
+    .profile-info-list {
+        display: flex;
+        flex-direction: column;
+
+        div {
+            background: color($colors, app, contrast);
+            color: color($colors, app, base);
+            margin: 12px auto;
+            padding: 12px;
+            letter-spacing: 1px;
+        }
+    }
+}

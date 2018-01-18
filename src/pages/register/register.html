@@ -5,14 +5,76 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>register</ion-title>
-  </ion-navbar>
-
+  <navbar [title]="'Register'" [hideToggleMenu]="true"></navbar>
 </ion-header>
 
 
 <ion-content padding>
+  <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+      <ion-list>
 
+        <ion-item>
+          <ion-label stacked>Firstname <span [hidden]="fname.valid || fname.pristine"><i>is required</i></span></ion-label>
+          <ion-input type="text" [(ngModel)]="model.fname" #fname="ngModel" required name="fname"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label stacked>Lastname<span [hidden]="lname.valid || lname.pristine"><i> is required</i></span></ion-label>
+          <ion-input type="text" [(ngModel)]="model.lname" #lname="ngModel" required name="lname"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label stacked>Email<span [hidden]="email.valid || email.pristine"><i> is required</i></span></ion-label>
+          <ion-input type="email" [(ngModel)]="model.email" #email="ngModel" required name="email"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label stacked>*Password<span [hidden]="password.valid || password.pristine"><i> is required</i></span></ion-label>
+          <ion-input type="password" [(ngModel)]="model.password" #password="ngModel" required name="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Qualifications<span [hidden]="qualifications.valid || qualifications.pristine"><i> is required</i></span></ion-label>
+          <ion-input type="text" [(ngModel)]="model.qualifications" #qualifications="ngModel" required name="qualifications"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label stacked>Workplace<span [hidden]="workplace.valid || workplace.pristine"><i> is required</i></span></ion-label>
+          <ion-input type="text" [(ngModel)]="model.workplace" #workplace="ngModel" required name="workplace"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label stacked>Phone<span [hidden]="phone.valid || phone.pristine"><i> is required</i></span></ion-label>
+          <ion-input type="number" [(ngModel)]="model.phone" #phone="ngModel" required name="phone"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col text-center>
+                Make your workpalce more accessible!
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col text-center>
+                <input type="number" class="mini-input" [(ngModel)]="model.lat" name="lat" placeholder="Latitude">
+              </ion-col>
+              <ion-col text-center>
+                <input type="number" class="mini-input" [(ngModel)]="model.long" name="long" placeholder="Longitude">
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+
+        <ion-item>
+          <div class="file-input-wrapper">
+            <input type="file" (change)="fileUpload($event)">
+            <button class="file" ion-button color="light">Select your Picture</button>
+            <button ion-button color="light">Upload</button>
+          </div>
+        </ion-item>
+      
+      </ion-list>
+      <button ion-button block color="light" type="submit" [disabled]="!registerForm.form.valid">Register</button>
+  </form>
 </ion-content>

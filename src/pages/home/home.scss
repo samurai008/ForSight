@@ -1,3 +1,10 @@
 page-home {
-
+    ion-card {
+        background: #ffffff !important;
+        ion-item {
+            background: #ffffff !important;
+        }
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+    }
 }
